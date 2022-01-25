@@ -49,9 +49,11 @@ export class StringEditorViewModelBase extends Base {
     this.errorText = this.creator.onGetErrorTextOnValidationCallback(this.locString.name, <any>this.locString.owner, clearedText);
 
     if (this.locString.text != clearedText) {
-      if(!this.errorText)
-        this.locString.text = clearedText;
-      else{
+      if(!this.errorText) {
+        //[SVY-130] applied to receive the enter key as an input value
+        // this.locString.text = clearedText;
+        this.locString.text = event.target.innerText;
+      } else {
         this.focusedProgram = true;
         event.target.focus();
       }
@@ -66,8 +68,9 @@ export class StringEditorViewModelBase extends Base {
   }
   public onKeyDown(event: KeyboardEvent): boolean {
     if (event.keyCode === 13) {
-      this.blurEditor();
-      this.done(event);
+      //[SVY-130] applied to receive the enter key as an input value
+      // this.blurEditor();
+      // this.done(event);
     }
     if (event.keyCode === 27) {
       this.blurredByEscape = true;
