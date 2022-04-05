@@ -208,6 +208,7 @@ export class QuestionAdornerViewModel extends ActionContainerViewModel<SurveyMod
     const requiredAction = new Action({
       id: "isrequired",
       css: this.isRequired ? "sv-action-bar-item--secondary" : "",
+      showTitle: false,
       title: this.creator.getLocString("pe.isRequired"),
       visibleIndex: 20,
       iconName: this.isRequired
@@ -241,7 +242,36 @@ export class QuestionAdornerViewModel extends ActionContainerViewModel<SurveyMod
   }
 
   protected buildActions(items: Array<Action>) {
-    super.buildActions(items);
+    // super.buildActions(items);
+    items.push(
+        new Action({
+          id: "duplicate",
+          iconName: "icon-survey_question_copy",
+          iconSize: 16,
+          showTitle: false,
+          title: this.creator.getLocString("survey.duplicate"),
+          visibleIndex: 10,
+          action: () => {
+            this.duplicate();
+          }
+        })
+    );
+
+    items.push(
+        new Action({
+          id: "delete",
+          iconName: "icon-survey_question_delete",
+          iconSize: 16,
+          showTitle: false,
+          needSeparator: items.length > 0,
+          title: this.creator.getLocString("pe.delete"),
+          visibleIndex: 30,
+          action: () => {
+            this.creator.deleteElement(this.surveyElement);
+          }
+        })
+    );
+
     let element = this.surveyElement;
     if (!element.isPanel) {
       items.push(this.createConverToAction());
