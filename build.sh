@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #npm install -g npm-cli-login
-npm-cli-login -u jenkins -p jenkins1234!1 -e developers@coontec.com -r https://maven.meback.ai/repository/npm-private/
+npm-cli-login -u jenkins -p jenkins1234\!1 -e developers@coontec.com -r https://maven.meback.ai/repository/npm-private/
 
 npm install --registry https://maven.meback.ai/repository/npm-group
 
