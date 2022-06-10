@@ -65,10 +65,10 @@ const buildPlatformJson = {
   },
   dependencies: {
     //TODO: Return back when release
-    // "survey-core": "^" + packageJson.version,
-    // "survey-knockout-ui": "^" + packageJson.version,
-    "survey-core": "^1.8.0",
-    "survey-knockout-ui": "^1.8.0",
+    "survey-core": packageJson.version,
+    "survey-knockout-ui": packageJson.version,
+    // "survey-core": "^1.8.0",
+    // "survey-knockout-ui": "^1.8.0",
     knockout: "^3.5.0"
   },
   devDependencies: {}

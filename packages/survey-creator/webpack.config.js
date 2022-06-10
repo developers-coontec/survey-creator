@@ -70,7 +70,7 @@ var packagePlatformJson = {
     "ace-builds": "^1.4.10"
   },
   dependencies: {
-    "survey-knockout": "^" + packageJson.version,
+    "survey-knockout": packageJson.version,
     knockout: "^3.5.0"
   },
   devDependencies: {}
@@ -236,7 +236,7 @@ module.exports = function(options) {
     },
     optimization: {
       minimize: isProductionBuild,
-    },    
+    },
     module: {
       rules: [
         {

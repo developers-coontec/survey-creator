@@ -69,9 +69,9 @@ var buildPlatformJson = {
     "ace-builds": "^1.4.12",
   },
   dependencies: {
-    //"survey-core": "^" + packageJson.version,
+    "survey-core": packageJson.version,
     //"survey-core": "^1.8.23",
-    "survey-core": "^1.8.23",
+    // "survey-core": "^1.8.23",
     knockout: "^3.5.0",
   },
   devDependencies: {},
@@ -117,7 +117,7 @@ module.exports = function (options) {
       }
     );
   }
-  
+
   //var packageName = chunkName || packageJson.name;
   var packageName = packageJson.name;
 
@@ -133,7 +133,7 @@ module.exports = function (options) {
           outputAsModuleFolder: true,
           headerText: dts_banner,
         });
-        
+
         var fileName = buildPath + packageName + ".d.ts";
 
         //removeLines(
