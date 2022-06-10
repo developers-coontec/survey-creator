@@ -23,7 +23,7 @@
     "papaparse": "^5.2.0",
     "rmodal": "1.0.31",
     "sortablejs": "1.6.1",
-    "survey-core": "../../../survey-library/build/survey-core"
+    "survey-core": "1.8.721"
   },
   "devDependencies": {
     "@types/ace": "0.0.32",
