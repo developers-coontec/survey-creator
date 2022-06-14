@@ -148,6 +148,7 @@ export var koreanStrings = {
     optionsCaption: "옵션 캡션",
     defaultValue: "기본값",
     cellsDefaultRow: "기본 셀 텍스트",
+    displayWhenEmpty: "빈 페이지 보이기",
 
     surveyEditorTitle: "설문지 설정 편집",
     qEditorTitle: "편집: {0}",

@@ -346,6 +346,7 @@ export var enStrings = {
     showOptionsCaption: "Show options caption",
     defaultValue: "Default value",
     cellsDefaultRow: "Default cells texts",
+    displayWhenEmpty: "Display when empty",
 
     surveyEditorTitle: "Edit survey settings",
     qEditorTitle: "Edit: {0}",

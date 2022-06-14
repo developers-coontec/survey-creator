@@ -4,7 +4,8 @@ import {
   Action,
   SurveyModel,
   SurveyElement,
-  property
+  property,
+  PageModel
 } from "survey-core";
 import { CreatorBase } from "../creator-base";
 
@@ -99,7 +100,41 @@ export class ActionContainerViewModel<T extends SurveyModel> extends Base {
         }
       })
     );
+
+    const displayWhenEmptyAction = new Action({
+      id: "displayWhenEmpty",
+      css: (this.surveyElement as PageModel).displayWhenEmpty
+          ? "sv-action-bar-item--secondary" : "",
+      showTitle: false,
+      iconName: (this.surveyElement as PageModel).displayWhenEmpty
+          ? "icon-switchactive_16x16"
+          : "icon-switchinactive_16x16",
+      iconSize: 16,
+      title: this.creator.getLocString("pe.displayWhenEmpty"),
+      visible: true,
+      visibleIndex: 0,
+      action: () => {
+        this.displayWhenEmpty();
+      }
+    })
+
+    this.surveyElement.registerFunctionOnPropertyValueChanged(
+        "displayWhenEmpty",
+        () => {
+          displayWhenEmptyAction.iconName = (this.surveyElement as PageModel).displayWhenEmpty
+              ? "icon-switchactive_16x16"
+              : "icon-switchinactive_16x16";
+          displayWhenEmptyAction.css = (this.surveyElement as PageModel).displayWhenEmpty
+              ? "sv-action-bar-item--secondary"
+              : "";
+        },
+    );
+
+    items.push(displayWhenEmptyAction);
   }
 
   protected duplicate() {}
+
+  protected displayWhenEmpty() {}
+
 }
