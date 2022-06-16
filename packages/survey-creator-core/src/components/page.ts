@@ -121,4 +121,8 @@ export class PageViewModel<
   public get allowEdit() {
     return !this.creator.readOnly;
   }
+
+  protected displayWhenEmpty() {
+    this.page.displayWhenEmpty = !this.page.displayWhenEmpty;
+  }
 }
