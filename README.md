@@ -90,11 +90,11 @@ The Survey Creator (Form Builder) is NOT FREE for commercial using. Please find 
 ## Publish
 1. cd packages/survey-creator-core
 2. npm run build
-3. npm -registry https://maven.meback.ai/repository/npm-group/ install
-4. npm -registry https://maven.meback.ai/repository/npm-private/ login
-5. npm -registry https://maven.meback.ai/repository/npm-private/ publish build
+3. npm -registry https://maven.planesg.ai/repository/npm-group/ install
+4. npm -registry https://maven.planesg.ai/repository/npm-private/ login
+5. npm -registry https://maven.planesg.ai/repository/npm-private/ publish build
 6. cd ../survey-creator-react
 7. npm run build
-8. npm -registry https://maven.meback.ai/repository/npm-group/ install
-9. npm -registry https://maven.meback.ai/repository/npm-private/ login
-10. npm -registry https://maven.meback.ai/repository/npm-private/ publish build
+8. npm -registry https://maven.planesg.ai/repository/npm-group/ install
+9. npm -registry https://maven.planesg.ai/repository/npm-private/ login
+10. npm -registry https://maven.planesg.ai/repository/npm-private/ publish build
